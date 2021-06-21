@@ -15,7 +15,7 @@ jobs:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         APP_NAME: ${{ 'dotnet-ci-cd' }}
       run: |
-        cd ./dotnet-ci-cd
+        cd ./
         docker login --username=osaelh --password=$HEROKU_API_KEY registry.heroku.com
         heroku container:push web -a $APP_NAME
         heroku container:release web -a $APP_NAME
